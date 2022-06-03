@@ -4,14 +4,14 @@ author: "AEL"
 date: "6/3/2022"
 output: html_document
 ---
+```{r}
 library(ggplot2)
-library(dplyr)
+library(dplyr) 
 library(gapminder)
+```
 
 
-library(ggplot2)
-library(dplyr)
-library(gapminder)
+
 ```{r}
 library(raster)
 library(rgdal)
@@ -22,14 +22,17 @@ liveData <- raster("data/HARV_dsmCrop.tif")
 ```{r}
 summary(liveData)
 ```
+
 ```{r}
 str(liveData)
 ```
+
 ```{r}
 liveData <- as.data.frame(liveData,xy=TRUE)
 ggplot() + geom_raster(data=liveData, aes(x=x, y=y, fill=HARV_dsmCrop))
-+ scale_fill_viridis_c()
+ scale_fill_viridis_c()
 ```
+
 dspg 2022
 
 ```{r}
@@ -39,9 +42,6 @@ library(rgdal)
 
 ```{r}
 HARV_data <- raster("data/HARV_dsmCrop.tif")
-```
-```{r}
-summary(HARV_data)
 ```
 
 ```{r}
@@ -59,5 +59,3 @@ ggplot(HARV_data) + geom_boxplot(aes(x=x,y=y))
 ```{r}
 ggplot(data=gapminder,aes(x=lifeExp)) + geom_histogram()
 ```
-
-
