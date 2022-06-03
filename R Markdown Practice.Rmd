@@ -24,5 +24,6 @@ str(liveData)
 ```{r}
 liveData <- as.data.frame(liveData,xy=TRUE)
 ggplot() + geom_raster(data=liveData, aes(x=x, y=y, fill=HARV_dsmCrop))
-+ scale_fill_viridis_a()
++ scale_fill_viridis_c()
 ```
+dspg 2022
