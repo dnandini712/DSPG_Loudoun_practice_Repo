@@ -17,6 +17,23 @@ library(raster)
 library(rgdal)
 liveData <- raster("data/HARV_dsmCrop.tif")
 
+
+```{r Amandas Graph}
+library(ggplot2)
+library(gapminder)
+library(raster)
+library(rgdal)
+ggplot(data=gapminder,aes(x=year,y=lifeExp))+geom_point()
+```
+
+```{r}
+HARV <- raster("data/HARV_dsmCrop.tif")
+HARV_df <- as.data.frame(HARV,xy=TRUE)
+ggplot()+geom_raster(data=HARV_df,aes(x=x,y=y,fill=HARV_dsmCrop))+scale_fill_viridis_c()+coord_quickmap()
+```
+
+
+
 ```
 
 ```{r}
@@ -59,3 +76,9 @@ ggplot(HARV_data) + geom_boxplot(aes(x=x,y=y))
 ```{r}
 ggplot(data=gapminder,aes(x=lifeExp)) + geom_histogram()
 ```
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 70f5d9e504e409950c126daec03c0209eb6fe410
